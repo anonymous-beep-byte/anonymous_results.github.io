@@ -13,21 +13,21 @@ We ran a small exploratory experiment to evaluate model behavior under four sett
 <table>
   <tr>
     <td align="center">
-      <img src="figures/figure1.png" width="300"><br>
+      <img src="no_no_mucbv.png" width="300"><br>
       <sub><b>(a)</b> Baseline result under Condition 1.</sub>
     </td>
     <td align="center">
-      <img src="figures/figure2.png" width="300"><br>
+      <img src="paper_no_mucbv.png" width="300"><br>
       <sub><b>(b)</b> Output observed for Condition 2.</sub>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="figures/figure3.png" width="300"><br>
+      <img src="prefix_no_mucbv.png" width="300"><br>
       <sub><b>(c)</b> Representative result for Condition 3.</sub>
     </td>
     <td align="center">
-      <img src="figures/figure4.png" width="300"><br>
+      <img src="random_no_mucbv.png" width="300"><br>
       <sub><b>(d)</b> Final example under Condition 4.</sub>
     </td>
   </tr>
