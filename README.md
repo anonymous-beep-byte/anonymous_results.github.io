@@ -3,7 +3,6 @@
 ## Overview
 
 Here we present additional experiments that further confirm the performance of our proposed method, CMAB-SAMBA.  
-We include experiments at larger scales, as well as additional ablation studies.
 
 # Experiment 1: Regret Progression Over Rounds (K = 20, 50, 100)
 
@@ -95,9 +94,3 @@ We run experiments in larger-scale settings to confirm the scalability of our me
 <p align="center">
   <b>Figure 3.</b> K = 100, d = 5, C = 100k, Δ = 10^-2
 </p>
-
-## Notes
-
-- All figures are stored in the `figures/` folder.
-- Replace the sample captions with your experiment-specific descriptions.
-- You can add more sections here for methods, data, or conclusions.
