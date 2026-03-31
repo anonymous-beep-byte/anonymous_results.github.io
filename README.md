@@ -9,33 +9,33 @@ Here we have experimetns with larger scale, as well as additional ablation studi
 
 We run our experiments for larger scale settings to confirm the scalability of our method.
 
-## K = 20
+## $K = 20, d = 5, C = 100k, \Delta = 10^{-2}$
 
 <table>
   <tr>
     <td align="center">
-      <img src="no_no_mucbv.png" width="300"><br>
-      <sub><b>(a)</b> Baseline result under Condition 1.</sub>
+      <img src="no_mucbv_K20.png" width="300"><br>
+      <sub><b>(a)</b> No Corruption.</sub>
     </td>
-    <td align="center">
-      <img src="paper_no_mucbv.png" width="300"><br>
-      <sub><b>(b)</b> Output observed for Condition 2.</sub>
+     <td align="center">
+      <img src="random_mucbv_K20.png" width="300"><br>
+      <sub><b>(b)</b> Corruption in C random Rounds.</sub>
     </td>
-  </tr>
+    </tr>
   <tr>
     <td align="center">
-      <img src="prefix_no_mucbv.png" width="300"><br>
-      <sub><b>(c)</b> Representative result for Condition 3.</sub>
+      <img src="prefix_mucbv_K20.png" width="300"><br>
+      <sub><b>(c)</b> First C Rounds Corrupted
     </td>
     <td align="center">
-      <img src="random_no_mucbv.png" width="300"><br>
-      <sub><b>(d)</b> Final example under Condition 4.</sub>
+      <img src="paper_mucbv_K20.png" width="300"><br>
+      <sub><b>(d)</b> Targeted Attack.</sub>
     </td>
   </tr>
 </table>
-
+ 
 <p align="center">
-  <b>Figure 1.</b> Qualitative comparison of four experiment conditions. Each panel shows a representative PNG output, with subcaptions describing the corresponding case.
+  <b>Figure 1.</b> $K = 20, d = 5, C = 100k, \Delta = 10^{-2}$
 </p>
 
 ## Notes
