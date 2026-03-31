@@ -43,21 +43,21 @@ We run our experiments for larger scale settings to confirm the scalability of o
 <table>
   <tr>
     <td align="center">
-      <img src="no_mucbv_K50.png" width="300"><br>
+      <img src="no_K50.png" width="300"><br>
       <sub><b>(a)</b> No Corruption.</sub>
     </td>
      <td align="center">
-      <img src="random_mucbv_K50.png" width="300"><br>
+      <img src="random_K50.png" width="300"><br>
       <sub><b>(b)</b> Corruption in C random Rounds.</sub>
     </td>
     </tr>
   <tr>
     <td align="center">
-      <img src="prefix_mucbv_K50.png" width="300"><br>
+      <img src="prefix_K50.png" width="300"><br>
       <sub><b>(c)</b> First C Rounds Corrupted
     </td>
     <td align="center">
-      <img src="paper_mucbv_K50.png" width="300"><br>
+      <img src="paper_K50.png" width="300"><br>
       <sub><b>(d)</b> Targeted Attack.</sub>
     </td>
   </tr>
