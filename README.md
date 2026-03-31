@@ -2,7 +2,8 @@
 
 ## Overview
 
-This repository contains a small example experiment demonstrating how different conditions affect the output of a model. The purpose of this experiment is to compare four representative cases and visually summarize the results.
+Here we present additional experiments that further confirm the performance of our proposed method, CMAB-SAMBA. 
+Here we have experimetns with larger scale, as well as additional ablation studies. 
 
 ## Experiment Description
 
