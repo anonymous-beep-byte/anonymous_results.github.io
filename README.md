@@ -5,11 +5,11 @@
 Here we present additional experiments that further confirm the performance of our proposed method, CMAB-SAMBA. 
 Here we have experimetns with larger scale, as well as additional ablation studies. 
 
-## Experiment Description
+## Experiment 1: Regret Progression Over Rounds (K = 20, 50, 100)
 
-We ran a small exploratory experiment to evaluate model behavior under four settings. Each panel below shows one result example. Together, these figures highlight qualitative differences across conditions and provide a quick visual comparison.
+We run our experiments for larger scale settings to confirm the scalability of our method.
 
-## Results
+## K = 20
 
 <table>
   <tr>
