@@ -4,23 +4,40 @@
   <meta charset="UTF-8">
   <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yelp Benchmark</title>
+  <title>Empirical Runtime and Memory Comparison</title>
 
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 850px;
+      max-width: 1050px;
       margin: 60px auto;
       padding: 0 24px;
-      line-height: 1.5;
+      line-height: 1.55;
       color: #222;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 28px;
+    }
+
+    p {
+      max-width: 850px;
+      margin: 0 auto 16px auto;
+      font-size: 16px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 30px;
     }
 
     table {
       border-collapse: collapse;
-      margin: 24px auto;
+      margin: 0 auto;
       width: 100%;
-      max-width: 620px;
+      min-width: 900px;
     }
 
     caption {
@@ -34,10 +51,15 @@
       padding: 8px 12px;
       text-align: right;
       border-bottom: 1px solid #ccc;
+      white-space: nowrap;
     }
 
     th:first-child,
-    td:first-child {
+    td:first-child,
+    th:nth-child(2),
+    td:nth-child(2),
+    th:last-child,
+    td:last-child {
       text-align: left;
     }
 
@@ -60,48 +82,90 @@
 </head>
 
 <body>
-  <table>
-    <caption>
-      Yelp benchmark, K=529, T=40000, d=10, C=40000,
-      corruption mode: <code>algo5_absolute</code>.
-      All runs have <code>round_idx=0</code>.
-    </caption>
+  <h1>Empirical Runtime and Memory Comparison</h1>
 
-    <thead>
-      <tr>
-        <th>Algorithm</th>
-        <th>Time (s)</th>
-        <th>Peak mem. (MB)</th>
-      </tr>
-    </thead>
+  <p>
+    Here are some initial runtime and memory benchmarks. All of the algorithms are ran in exactly the setting that the experiments in the paper were done with. You can see the runtimes for each algorithm as well as the peak allocated memory that the algorithm used.
+  </p>
 
-    <tbody>
-      <tr>
-        <td>CUCB</td>
-        <td>566.61</td>
-        <td>97.16</td>
-      </tr>
-      <tr>
-        <td>Mean-median</td>
-        <td>1276.63</td>
-        <td>1075.04</td>
-      </tr>
-      <tr>
-        <td>CBARBAR</td>
-        <td>66.81</td>
-        <td>3.74</td>
-      </tr>
-      <tr>
-        <td>FTRL</td>
-        <td>843.49</td>
-        <td>17.56</td>
-      </tr>
-      <tr>
-        <td>CascadeRAC</td>
-        <td>443.54</td>
-        <td>18.24</td>
-      </tr>
-    </tbody>
-  </table>
+  <p>
+    The runtime is comparable. However, the space requirement for M<sup>2</sup>UCB seems to be much higher than all the other algorithms. I think this has to do both with model selection as well as the use of caching to speed up the algorithm. So the use of memory vs. runtime is a tradeoff that we discuss in more detail in our next revision.
+  </p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Full CSV benchmark results</caption>
+      <thead>
+        <tr>
+          <th>dataset</th>
+          <th>algorithm</th>
+          <th>round_idx</th>
+          <th>elapsed_seconds</th>
+          <th>peak_memory_mb</th>
+          <th>T</th>
+          <th>d</th>
+          <th>C</th>
+          <th>corruption_mode</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>yelp</td>
+          <td>cucb</td>
+          <td>0</td>
+          <td>566.6062942612916</td>
+          <td>97.15638256072998</td>
+          <td>40000</td>
+          <td>10</td>
+          <td>40000</td>
+          <td>algo5_absolute</td>
+        </tr>
+        <tr>
+          <td>yelp</td>
+          <td>mean_median</td>
+          <td>0</td>
+          <td>1276.6289892029017</td>
+          <td>1075.039463043213</td>
+          <td>40000</td>
+          <td>10</td>
+          <td>40000</td>
+          <td>algo5_absolute</td>
+        </tr>
+        <tr>
+          <td>yelp</td>
+          <td>cbarbar</td>
+          <td>0</td>
+          <td>66.81274866499007</td>
+          <td>3.7435007095336914</td>
+          <td>40000</td>
+          <td>10</td>
+          <td>40000</td>
+          <td>algo5_absolute</td>
+        </tr>
+        <tr>
+          <td>yelp</td>
+          <td>ftrl</td>
+          <td>0</td>
+          <td>843.4901684271172</td>
+          <td>17.556583404541016</td>
+          <td>40000</td>
+          <td>10</td>
+          <td>40000</td>
+          <td>algo5_absolute</td>
+        </tr>
+        <tr>
+          <td>yelp</td>
+          <td>cascade_race</td>
+          <td>0</td>
+          <td>443.5352656831965</td>
+          <td>18.23829746246338</td>
+          <td>40000</td>
+          <td>10</td>
+          <td>40000</td>
+          <td>algo5_absolute</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
 </html>
