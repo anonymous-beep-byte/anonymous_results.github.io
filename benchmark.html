@@ -8,164 +8,201 @@
 
   <style>
     body {
-      font-family: Arial, sans-serif;
-      max-width: 1050px;
-      margin: 60px auto;
-      padding: 0 24px;
-      line-height: 1.55;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f7f4;
       color: #222;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1050px;
+      margin: 56px auto;
+      padding: 0 24px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 14px;
+      padding: 36px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
     }
 
     h1 {
+      margin: 0 0 28px 0;
       text-align: center;
-      font-size: 28px;
-      margin-bottom: 28px;
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
     }
 
-    p {
+    .description {
       max-width: 850px;
-      margin: 0 auto 16px auto;
+      margin: 0 auto 28px auto;
       font-size: 16px;
+    }
+
+    .description p {
+      margin: 0 0 16px 0;
     }
 
     .table-wrap {
       overflow-x: auto;
-      margin-top: 30px;
+      margin-top: 28px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
     }
 
     table {
       border-collapse: collapse;
-      margin: 0 auto;
       width: 100%;
-      min-width: 900px;
+      min-width: 760px;
+      background: #fff;
     }
 
     caption {
       caption-side: top;
+      padding: 14px 12px;
       font-weight: 600;
-      margin-bottom: 12px;
       text-align: center;
+      background: #fafafa;
+      border-bottom: 1px solid #ddd;
     }
 
     th, td {
-      padding: 8px 12px;
+      padding: 11px 14px;
       text-align: right;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid #e3e3e3;
       white-space: nowrap;
+      font-size: 14px;
     }
 
     th:first-child,
     td:first-child,
     th:nth-child(2),
-    td:nth-child(2),
-    th:last-child,
-    td:last-child {
+    td:nth-child(2) {
       text-align: left;
     }
 
     thead th {
-      border-top: 2px solid #222;
-      border-bottom: 2px solid #222;
+      background: #f2f2f2;
+      font-weight: 700;
+      border-bottom: 2px solid #bbb;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fbfbfb;
+    }
+
+    tbody tr:hover {
+      background: #f1f5f9;
     }
 
     tbody tr:last-child td {
-      border-bottom: 2px solid #222;
+      border-bottom: none;
     }
 
     code {
       font-family: Consolas, Monaco, monospace;
-      background: #f4f4f4;
-      padding: 1px 4px;
-      border-radius: 3px;
+      background: #f1f1f1;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+
+    .note {
+      margin-top: 14px;
+      font-size: 13px;
+      color: #555;
+      text-align: center;
     }
   </style>
 </head>
 
 <body>
-  <h1>Empirical Runtime and Memory Comparison</h1>
+  <main class="container">
+    <section class="card">
+      <h1>Empirical Runtime and Memory Comparison</h1>
 
-  <p>
-    Here are some initial runtime and memory benchmarks. All of the algorithms are ran in exactly the setting that the experiments in the paper were done with. You can see the runtimes for each algorithm as well as the peak allocated memory that the algorithm used.
-  </p>
+      <div class="description">
+        <p>
+          Here are some initial runtime and memory benchmarks. All of the algorithms are ran in exactly the setting that the experiments in the paper were done with. You can see the runtimes for each algorithm as well as the peak allocated memory that the algorithm used.
+        </p>
 
-  <p>
-    The runtime is comparable. However, the space requirement for M<sup>2</sup>UCB seems to be much higher than all the other algorithms. I think this has to do both with model selection as well as the use of caching to speed up the algorithm. So the use of memory vs. runtime is a tradeoff that we discuss in more detail in our next revision.
-  </p>
+        <p>
+          The runtime is comparable. However, the space requirement for M<sup>2</sup>UCB seems to be much higher than all the other algorithms. I think this has to do both with model selection as well as the use of caching to speed up the algorithm. So the use of memory vs. runtime is a tradeoff that we discuss in more detail in our next revision.
+        </p>
+      </div>
 
-  <div class="table-wrap">
-    <table>
-      <caption>Full CSV benchmark results</caption>
-      <thead>
-        <tr>
-          <th>dataset</th>
-          <th>algorithm</th>
-          <th>round_idx</th>
-          <th>elapsed_seconds</th>
-          <th>peak_memory_mb</th>
-          <th>T</th>
-          <th>d</th>
-          <th>C</th>
-          <th>corruption_mode</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>yelp</td>
-          <td>cucb</td>
-          <td>0</td>
-          <td>566.6062942612916</td>
-          <td>97.15638256072998</td>
-          <td>40000</td>
-          <td>10</td>
-          <td>40000</td>
-          <td>algo5_absolute</td>
-        </tr>
-        <tr>
-          <td>yelp</td>
-          <td>mean_median</td>
-          <td>0</td>
-          <td>1276.6289892029017</td>
-          <td>1075.039463043213</td>
-          <td>40000</td>
-          <td>10</td>
-          <td>40000</td>
-          <td>algo5_absolute</td>
-        </tr>
-        <tr>
-          <td>yelp</td>
-          <td>cbarbar</td>
-          <td>0</td>
-          <td>66.81274866499007</td>
-          <td>3.7435007095336914</td>
-          <td>40000</td>
-          <td>10</td>
-          <td>40000</td>
-          <td>algo5_absolute</td>
-        </tr>
-        <tr>
-          <td>yelp</td>
-          <td>ftrl</td>
-          <td>0</td>
-          <td>843.4901684271172</td>
-          <td>17.556583404541016</td>
-          <td>40000</td>
-          <td>10</td>
-          <td>40000</td>
-          <td>algo5_absolute</td>
-        </tr>
-        <tr>
-          <td>yelp</td>
-          <td>cascade_race</td>
-          <td>0</td>
-          <td>443.5352656831965</td>
-          <td>18.23829746246338</td>
-          <td>40000</td>
-          <td>10</td>
-          <td>40000</td>
-          <td>algo5_absolute</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+      <div class="table-wrap">
+        <table>
+          <caption>Full CSV benchmark results</caption>
+          <thead>
+            <tr>
+              <th>dataset</th>
+              <th>algorithm</th>
+              <th>elapsed_seconds</th>
+              <th>peak_memory_mb</th>
+              <th>T</th>
+              <th>d</th>
+              <th>C</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>yelp</td>
+              <td>cucb</td>
+              <td>566.6062942612916</td>
+              <td>97.15638256072998</td>
+              <td>40000</td>
+              <td>10</td>
+              <td>40000</td>
+            </tr>
+            <tr>
+              <td>yelp</td>
+              <td>mean_median</td>
+              <td>1276.6289892029017</td>
+              <td>1075.039463043213</td>
+              <td>40000</td>
+              <td>10</td>
+              <td>40000</td>
+            </tr>
+            <tr>
+              <td>yelp</td>
+              <td>cbarbar</td>
+              <td>66.81274866499007</td>
+              <td>3.7435007095336914</td>
+              <td>40000</td>
+              <td>10</td>
+              <td>40000</td>
+            </tr>
+            <tr>
+              <td>yelp</td>
+              <td>ftrl</td>
+              <td>843.4901684271172</td>
+              <td>17.556583404541016</td>
+              <td>40000</td>
+              <td>10</td>
+              <td>40000</td>
+            </tr>
+            <tr>
+              <td>yelp</td>
+              <td>cascade_race</td>
+              <td>443.5352656831965</td>
+              <td>18.23829746246338</td>
+              <td>40000</td>
+              <td>10</td>
+              <td>40000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note">
+        The columns <code>round_idx</code> and <code>corruption_mode</code> are omitted from the displayed table.
+      </div>
+    </section>
+  </main>
 </body>
 </html>
