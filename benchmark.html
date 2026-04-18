@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yelp Benchmark</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 850px;
+      margin: 60px auto;
+      padding: 0 24px;
+      line-height: 1.5;
+      color: #222;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 24px auto;
+      width: 100%;
+      max-width: 620px;
+    }
+
+    caption {
+      caption-side: top;
+      font-weight: 600;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    th, td {
+      padding: 8px 12px;
+      text-align: right;
+      border-bottom: 1px solid #ccc;
+    }
+
+    th:first-child,
+    td:first-child {
+      text-align: left;
+    }
+
+    thead th {
+      border-top: 2px solid #222;
+      border-bottom: 2px solid #222;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: 2px solid #222;
+    }
+
+    code {
+      font-family: Consolas, Monaco, monospace;
+      background: #f4f4f4;
+      padding: 1px 4px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <caption>
+      Yelp benchmark, K=529, T=40000, d=10, C=40000,
+      corruption mode: <code>algo5_absolute</code>.
+      All runs have <code>round_idx=0</code>.
+    </caption>
+
+    <thead>
+      <tr>
+        <th>Algorithm</th>
+        <th>Time (s)</th>
+        <th>Peak mem. (MB)</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>CUCB</td>
+        <td>566.61</td>
+        <td>97.16</td>
+      </tr>
+      <tr>
+        <td>Mean-median</td>
+        <td>1276.63</td>
+        <td>1075.04</td>
+      </tr>
+      <tr>
+        <td>CBARBAR</td>
+        <td>66.81</td>
+        <td>3.74</td>
+      </tr>
+      <tr>
+        <td>FTRL</td>
+        <td>843.49</td>
+        <td>17.56</td>
+      </tr>
+      <tr>
+        <td>CascadeRace</td>
+        <td>443.54</td>
+        <td>18.24</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
